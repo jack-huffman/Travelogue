@@ -15,6 +15,10 @@
 		0DB33E8D2283891B00E31943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB33E8B2283891B00E31943 /* LaunchScreen.storyboard */; };
 		0DB33E982283891B00E31943 /* TravelogueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33E972283891B00E31943 /* TravelogueTests.swift */; };
 		0DB33EA32283891B00E31943 /* TravelogueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EA22283891B00E31943 /* TravelogueUITests.swift */; };
+		0DB33EBE22838D7000E31943 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EBA22838D7000E31943 /* Trip+CoreDataClass.swift */; };
+		0DB33EBF22838D7000E31943 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EBB22838D7000E31943 /* Trip+CoreDataProperties.swift */; };
+		0DB33EC022838D7000E31943 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EBC22838D7000E31943 /* Entry+CoreDataClass.swift */; };
+		0DB33EC122838D7000E31943 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EBD22838D7000E31943 /* Entry+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		0DB33E9E2283891B00E31943 /* TravelogueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelogueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB33EA22283891B00E31943 /* TravelogueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelogueUITests.swift; sourceTree = "<group>"; };
 		0DB33EA42283891B00E31943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB33EBA22838D7000E31943 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Trip+CoreDataClass.swift"; path = "Model/Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0DB33EBB22838D7000E31943 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Trip+CoreDataProperties.swift"; path = "Model/Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0DB33EBC22838D7000E31943 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataClass.swift"; path = "Model/Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0DB33EBD22838D7000E31943 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Entry+CoreDataProperties.swift"; path = "Model/Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,10 @@
 		0DB33E732283891A00E31943 = {
 			isa = PBXGroup;
 			children = (
+				0DB33EBA22838D7000E31943 /* Trip+CoreDataClass.swift */,
+				0DB33EBB22838D7000E31943 /* Trip+CoreDataProperties.swift */,
+				0DB33EBC22838D7000E31943 /* Entry+CoreDataClass.swift */,
+				0DB33EBD22838D7000E31943 /* Entry+CoreDataProperties.swift */,
 				0DB33E7E2283891A00E31943 /* Travelogue */,
 				0DB33E962283891B00E31943 /* TravelogueTests */,
 				0DB33EA12283891B00E31943 /* TravelogueUITests */,
@@ -260,7 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DB33E822283891A00E31943 /* ViewController.swift in Sources */,
+				0DB33EC122838D7000E31943 /* Entry+CoreDataProperties.swift in Sources */,
 				0DB33E802283891A00E31943 /* AppDelegate.swift in Sources */,
+				0DB33EBE22838D7000E31943 /* Trip+CoreDataClass.swift in Sources */,
+				0DB33EBF22838D7000E31943 /* Trip+CoreDataProperties.swift in Sources */,
+				0DB33EC022838D7000E31943 /* Entry+CoreDataClass.swift in Sources */,
 				0DB33E882283891A00E31943 /* Travelogue.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
