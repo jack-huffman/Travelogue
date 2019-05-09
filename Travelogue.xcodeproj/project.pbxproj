@@ -21,6 +21,7 @@
 		0DB33EC32283AE1E00E31943 /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EC22283AE1E00E31943 /* TripTableViewController.swift */; };
 		0DB33EC52283AE5F00E31943 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EC42283AE5F00E31943 /* TripTableViewCell.swift */; };
 		0DB33EC72283BC5B00E31943 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EC62283BC5B00E31943 /* EntriesTableViewController.swift */; };
+		0DB33EC92283C55100E31943 /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EC82283C55100E31943 /* NewTripViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		0DB33EC22283AE1E00E31943 /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
 		0DB33EC42283AE5F00E31943 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		0DB33EC62283BC5B00E31943 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		0DB33EC82283C55100E31943 /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				0DB33E7F2283891A00E31943 /* AppDelegate.swift */,
 				0DB33E832283891A00E31943 /* Main.storyboard */,
+				0DB33EC82283C55100E31943 /* NewTripViewController.swift */,
 				0DB33EC62283BC5B00E31943 /* EntriesTableViewController.swift */,
 				0DB33EC42283AE5F00E31943 /* TripTableViewCell.swift */,
 				0DB33EC22283AE1E00E31943 /* TripTableViewController.swift */,
@@ -279,6 +282,7 @@
 			files = (
 				0DB33EC122838D7000E31943 /* Entry+CoreDataProperties.swift in Sources */,
 				0DB33EC32283AE1E00E31943 /* TripTableViewController.swift in Sources */,
+				0DB33EC92283C55100E31943 /* NewTripViewController.swift in Sources */,
 				0DB33E802283891A00E31943 /* AppDelegate.swift in Sources */,
 				0DB33EC72283BC5B00E31943 /* EntriesTableViewController.swift in Sources */,
 				0DB33EBE22838D7000E31943 /* Trip+CoreDataClass.swift in Sources */,

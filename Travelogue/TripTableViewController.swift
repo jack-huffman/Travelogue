@@ -44,32 +44,6 @@ class TripTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func newTrip(_ sender: UIBarButtonItem) {
-        // segue to new ViewController to create new trip record
-        
-        let alert = UIAlertController(title: "New Trip", message: "Please enter the title of the trip.", preferredStyle: .alert)
-        alert.addTextField(configurationHandler: { (textField) in
-            textField.text = ""
-        })
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak alert] (_) in
-            
-            // we know this exists
-            let text = alert?.textFields![0].text
-            let trip = Trip(title: text!)
-            
-            do {
-                try trip?.managedObjectContext?.save()
-                
-                
-            } catch {
-                print("Could not save trip")
-            }
-            
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

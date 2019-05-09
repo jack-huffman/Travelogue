@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Trips-->
         <scene sceneID="glt-lq-fP9">
             <objects>
-                <tableViewController id="NlS-EH-4Kv" customClass="TripTableViewController" customModule="Travelogue" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Trips" id="NlS-EH-4Kv" customClass="TripTableViewController" customModule="Travelogue" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Y1V-Xj-ek2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +28,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRe-MJ-zib">
                                             <rect key="frame" x="20" y="29" width="374" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -52,7 +53,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="16r-m2-tLK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lUH-86-fUX">
                             <connections>
-                                <action selector="newTrip:" destination="NlS-EH-4Kv" id="GdN-mK-BSE"/>
+                                <segue destination="7No-PA-nMz" kind="show" id="WmH-Ix-Umn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -65,10 +66,49 @@
             </objects>
             <point key="canvasLocation" x="86.956521739130437" y="-171.42857142857142"/>
         </scene>
-        <!--Table View Controller-->
+        <!--New Trip-->
+        <scene sceneID="6tv-Pr-agH">
+            <objects>
+                <viewController title="New Trip" id="7No-PA-nMz" customClass="NewTripViewController" customModule="Travelogue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zse-7h-dXg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvl-J7-mzM">
+                                <rect key="frame" x="20" y="129" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A7q-Mx-rb6">
+                                <rect key="frame" x="76" y="128" width="318" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="A7q-Mx-rb6" secondAttribute="trailing" id="ace-xT-UZb"/>
+                            <constraint firstItem="A7q-Mx-rb6" firstAttribute="leading" secondItem="Fvl-J7-mzM" secondAttribute="trailing" constant="8" id="kcH-i6-64Y"/>
+                            <constraint firstItem="A7q-Mx-rb6" firstAttribute="top" secondItem="zse-7h-dXg" secondAttribute="topMargin" constant="40" id="ofd-E2-nhh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Fvl-J7-mzM" secondAttribute="leading" id="uiw-sH-aeo"/>
+                            <constraint firstItem="Fvl-J7-mzM" firstAttribute="top" secondItem="zse-7h-dXg" secondAttribute="topMargin" constant="41" id="yLu-hS-SfX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8sR-lw-V5s"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleTextField" destination="A7q-Mx-rb6" id="DXg-fL-dLr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyB-Rs-vJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002.8985507246377" y="-840.40178571428567"/>
+        </scene>
+        <!--Entries-->
         <scene sceneID="RKr-al-SMp">
             <objects>
-                <tableViewController id="8wF-V6-Cnl" sceneMemberID="viewController">
+                <tableViewController title="Entries" id="8wF-V6-Cnl" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aqY-eZ-nOG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
