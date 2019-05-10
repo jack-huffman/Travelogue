@@ -49,4 +49,11 @@ public class Entry: NSManagedObject {
         self.validDate = date
         self.image = image
     }
+    
+    func update(title: String, content: String, date: Date, image: UIImage) {
+        self.title = title
+        self.content = content
+        self.validDate = date
+        self.image = image
+    }
 }

@@ -19,6 +19,8 @@ class TripTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tripsTableView.delegate = self
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -84,6 +86,7 @@ class TripTableViewController: UITableViewController {
                 let alert = UIAlertController(title: "Confirm Delete", message: "Are you sure you want to delete this record? This cannot be undone.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
                     self.deleteTrip(at: indexPath)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
                 }))
                 
                 alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
@@ -109,7 +112,6 @@ class TripTableViewController: UITableViewController {
         do {
             try context.save()
             trips.remove(at: indexPath.row)
-            tripsTableView.deleteRows(at: [indexPath], with: .automatic)
         } catch {
             print("Context could not be saved")
             tripsTableView.reloadRows(at: [indexPath], with: .automatic)
@@ -120,8 +122,8 @@ class TripTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? EntriesTableViewController, let selectedRow = tripsTableView.indexPathForSelectedRow?.row, let entries = trips[selectedRow].entries {
-            destination.entries = entries
+        if let destination = segue.destination as? EntriesTableViewController, let selectedRow = tripsTableView.indexPathForSelectedRow?.row {
+            destination.trip = trips[selectedRow]
         }
     }
  

@@ -22,6 +22,8 @@
 		0DB33EC52283AE5F00E31943 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EC42283AE5F00E31943 /* TripTableViewCell.swift */; };
 		0DB33EC72283BC5B00E31943 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EC62283BC5B00E31943 /* EntriesTableViewController.swift */; };
 		0DB33EC92283C55100E31943 /* NewTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB33EC82283C55100E31943 /* NewTripViewController.swift */; };
+		0DF0FD972286104B000FF1DD /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF0FD962286104B000FF1DD /* EntryDetailViewController.swift */; };
+		0DF0FD99228611B2000FF1DD /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF0FD98228611B2000FF1DD /* EntryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		0DB33EC42283AE5F00E31943 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		0DB33EC62283BC5B00E31943 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		0DB33EC82283C55100E31943 /* NewTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewController.swift; sourceTree = "<group>"; };
+		0DF0FD962286104B000FF1DD /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		0DF0FD98228611B2000FF1DD /* EntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 			children = (
 				0DB33E7F2283891A00E31943 /* AppDelegate.swift */,
 				0DB33E832283891A00E31943 /* Main.storyboard */,
+				0DF0FD98228611B2000FF1DD /* EntryTableViewCell.swift */,
+				0DF0FD962286104B000FF1DD /* EntryDetailViewController.swift */,
 				0DB33EC82283C55100E31943 /* NewTripViewController.swift */,
 				0DB33EC62283BC5B00E31943 /* EntriesTableViewController.swift */,
 				0DB33EC42283AE5F00E31943 /* TripTableViewCell.swift */,
@@ -280,12 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF0FD99228611B2000FF1DD /* EntryTableViewCell.swift in Sources */,
 				0DB33EC122838D7000E31943 /* Entry+CoreDataProperties.swift in Sources */,
 				0DB33EC32283AE1E00E31943 /* TripTableViewController.swift in Sources */,
 				0DB33EC92283C55100E31943 /* NewTripViewController.swift in Sources */,
 				0DB33E802283891A00E31943 /* AppDelegate.swift in Sources */,
 				0DB33EC72283BC5B00E31943 /* EntriesTableViewController.swift in Sources */,
 				0DB33EBE22838D7000E31943 /* Trip+CoreDataClass.swift in Sources */,
+				0DF0FD972286104B000FF1DD /* EntryDetailViewController.swift in Sources */,
 				0DB33EC52283AE5F00E31943 /* TripTableViewCell.swift in Sources */,
 				0DB33EBF22838D7000E31943 /* Trip+CoreDataProperties.swift in Sources */,
 				0DB33EC022838D7000E31943 /* Entry+CoreDataClass.swift in Sources */,
