@@ -8,10 +8,13 @@
 
 import UIKit
 
-class EntryDetailViewController: UIViewController {
+class EntryDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     // possible passed Entry for editing
     var entry: Entry?
+    
+    let imagePicker = UIImagePickerController()
+    
     
     // IBOutlets
     @IBOutlet weak var entryImage: UIImageView!
@@ -31,6 +34,10 @@ class EntryDetailViewController: UIViewController {
             datePicker.date = entry.validDate ?? Date()
             contentTextView.text = entry.content ?? ""
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EntryDetailViewController.entryImageTapped(tapGesture:)))
+        entryImage.isUserInteractionEnabled = true
+        entryImage.addGestureRecognizer(tapGesture)
     }
     
     @objc func saveEntry() {
@@ -55,6 +62,66 @@ class EntryDetailViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc func entryImageTapped(tapGesture: UITapGestureRecognizer) {
+        let alert = UIAlertController(title: "Select source", message: "Please select if you would like to take a picture or choose an existing one.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Camera", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in #selector(EntryDetailViewController.takePicture)}))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in #selector(EntryDetailViewController.selectPhoto)}))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)    }
+    
+    @objc func takePicture() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            alertNotifyUser(message: "Camera could not be opened for this device.")
+            return
+        }
+        
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true)
+    }
+    
+    @objc func selectPhoto() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            alertNotifyUser(message: "Photo Library could not be opened.")
+            return
+        }
+        
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        defer {
+            picker.dismiss(animated: true)
+        }
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            entryImage.image = image
+            return
+        }
+        print("Image couldn't be opened")
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        defer {
+            picker.dismiss(animated: true)
+        }
+        print("Cancelled")
+    }
+    
+    func alertNotifyUser(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
